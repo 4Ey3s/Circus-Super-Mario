@@ -2,69 +2,68 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]
-    Transform Player;
+    //public Player playerScript;
+    //public int damage = 1;
+    public Transform player;
+    public float moveSpeed = 2f;
+    public float jumpHeight = 5f;
+    public bool facingRight = false;
+    public LayerMask groundLayer;
+    public Transform groundCheck;
+    private bool isGrounded;
+    private Rigidbody2D rb;
+    //private Animator anim; 
 
-    [SerializeField]
-    float agroRange;
-
-    [SerializeField]
-    float moveSpeed;
-
-    [SerializeField]
-    float jumpForce;
-
-
-    Rigidbody2D rb2D;
 
     void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        //anim = GetComponent<Animator>();
     }
 
 
     void Update()
     {
-        float distToPlayer = Vector2.Distance(transform.position, Player.position);
-        Debug.Log("distToPlayer:" + distToPlayer);
 
-        if (distToPlayer < agroRange)
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+
+
+        if (player.position.x > transform.position.x && facingRight)
         {
-            ChasePlayer();
+            Flip();
         }
-        else
+        else if (player.position.x < transform.position.x && !facingRight)
         {
-            StopChasingPlayer();
+            Flip();
         }
 
+        if (Mathf.Abs(player.position.x - transform.position.x) < 2f && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        //anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
     }
 
-
-    void ChasePlayer()
+    void Flip()
     {
-        if (transform.position.x < Player.position.x)
-        {
-            rb2D.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(1, 1);
-        }
-        else
-        {
-            if (transform.position.x > Player.position.x)
-                rb2D.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(-1, 1);
-        }
-
-        if (transform.position.y < Player.position.y)
-        {
-            rb2D.velocity = new Vector2(0, jumpForce);
-        }
-
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
+   // private void OnTriggerEnter2D(Collider2D collision)
+   //{
 
-    void StopChasingPlayer()
-    {
-        rb2D.velocity = Vector2.zero;
-    }
+//  if (collision.gameObject.CompareTag("Player"))
+//  {
 
-
+//     playerScript.TakeDamage(damage);
+//  }
 }
+
+
+
+
