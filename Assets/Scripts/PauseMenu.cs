@@ -17,41 +17,42 @@ public class PauseMenu : MonoBehaviour
             if (isGamePaused)
             {
                 ResumeGame();
-
             }
             else
-            { PauseGame();
-            
+            { 
+                PauseGame();
             }
+            print("EscPressed");
         }
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
         isGamePaused = false;
     }
 
     void PauseGame()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.0f;
         isGamePaused = true;
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f;
-
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1.0f;
+        isGamePaused=false;
     }
 
     public void QuitGame()
     {
-        Application.Quit();
 
-        Debug.Log("Quit");
+        SceneManager.LoadScene("Main_Menu");
+        isGamePaused = false;
+        Debug.Log("QuitToMainMenu");
         
     }
 }
