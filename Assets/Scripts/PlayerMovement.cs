@@ -64,14 +64,14 @@ public class PlayerMovement : MonoBehaviour
                 rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Scene currentScene = SceneManager.GetActiveScene();
-                {
+            //if (Input.GetKeyDown(KeyCode.Escape))
+            //{
+            //    Scene currentScene = SceneManager.GetActiveScene();  Otettu pois kun pausemenussa sama nappi käytössä.
+            //    {
 
-                    SceneManager.LoadScene("MainMenu");
-                }
-            }
+            //        SceneManager.LoadScene("MainMenu");
+            //    }
+            //}
         }
     }
 }
