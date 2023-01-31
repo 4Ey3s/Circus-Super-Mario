@@ -17,6 +17,13 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundCheckLayer;
     public bool grounded;
 
+    AudioSource jumpSound;
+
+    public float health;
+    public float previousHealth;
+    public float maxHealth;
+
+
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -24,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-
+        jumpSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -50,9 +57,13 @@ public class PlayerMovement : MonoBehaviour
 
         }
         if (Input.GetButtonDown("Jump") && grounded == true)
+
         {
             rb2D.velocity = new Vector2(0, jumpForce);
+            jumpSound.Play();
+
         }
+
         {
             if (rb2D.velocity.y < 0)
             {

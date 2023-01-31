@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    //public Player playerScript;
-    //public int damage = 1;
+   public PlayerHealth playerHealth;
+    public int damage = 1;
     public Transform player;
     public float moveSpeed = 2f;
     public float jumpHeight = 5f;
@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     //private Animator anim; 
 
-
+    public
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,15 +54,17 @@ public class EnemyMovement : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
-   // private void OnTriggerEnter2D(Collider2D collision)
-   //{
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerHealth.TakeDamage(damage);
+        }
+    }
 
-//  if (collision.gameObject.CompareTag("Player"))
-//  {
+        
+    }
 
-//     playerScript.TakeDamage(damage);
-//  }
-}
 
 
 
