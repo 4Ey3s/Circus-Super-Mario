@@ -2405,7 +2405,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 11.0779505
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3531,7 +3531,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fd53c46876d90ef4780793ab1fd3f866, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4f10515fea70804f80ee95b3a4568cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3575,7 +3575,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3333333, y: 3.3333333}
+    oldSize: {x: 2.56, y: 2.4}
     newSize: {x: 3.3333333, y: 3.3333333}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4000,7 +4000,7 @@ PrefabInstance:
     - target: {fileID: 519518583137502598, guid: c399cb0dfcd49dd4cbf2cf168cf51429, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 52a60882cc670a544ac4c403793d6b8c, type: 3}
+      objectReference: {fileID: 21300000, guid: 4acff5441abb3584292b89d548997426, type: 3}
     - target: {fileID: 519518583137502598, guid: c399cb0dfcd49dd4cbf2cf168cf51429, type: 3}
       propertyPath: m_Color.b
       value: 1
