@@ -74,7 +74,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.DrawRay(detectionPoint.transform.position, Vector2.down, Color.green);
 
-        RaycastHit2D hit = Physics2D.Raycast(detectionPoint.transform.position, Vector2.down, 1f, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(detectionPoint.transform.position, Vector2.down, 10f, groundLayer);
         if (!hit)
         {
             Jump();
