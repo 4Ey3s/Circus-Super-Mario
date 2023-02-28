@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer playerSr;
     public PlayerMovement playerMovement;
+
+    Rigidbody2D rb2D;
+
 
     void Start()
     {
@@ -19,11 +23,18 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         if (health <= 0)
-        {
+        {           
+            //animator.SetTrigger("Kuolema animaatio jos tulee");           
             playerSr.enabled = false;
             playerMovement.enabled = false;
-        }
-    }
+            Destroy(GetComponent<CapsuleCollider2D>());
+            Camera.main.transform.parent = null;
 
-  
+        }
+       
+
+    }
+   
+
+
 }
