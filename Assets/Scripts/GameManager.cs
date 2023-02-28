@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
 {  
     public static GameManager manager;
 
+    public string currentLevel;
+    public int health;
+    public int maxHealth;
+
+
     private void Awake()
     {
         if (manager == null)
