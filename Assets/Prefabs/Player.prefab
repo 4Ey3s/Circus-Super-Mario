@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 253714837846957976}
   - component: {fileID: 8597788922179442493}
   - component: {fileID: 3616966623175078963}
+  - component: {fileID: 1380645503}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -259,7 +260,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6312991333667269982}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.28, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -385,6 +386,7 @@ MonoBehaviour:
   health: 0
   previousHealth: 0
   maxHealth: 0
+  animator: {fileID: 1380645503}
 --- !u!82 &253714837846957976
 AudioSource:
   m_ObjectHideFlags: 0
@@ -516,6 +518,26 @@ MonoBehaviour:
   maxHealth: 3
   playerSr: {fileID: 2907020099246730490}
   playerMovement: {fileID: 4811744066399407904}
+--- !u!95 &1380645503
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312991333667269982}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a801d83ba045fe4e95152884c9efe65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7558377666213962538
 GameObject:
   m_ObjectHideFlags: 0
