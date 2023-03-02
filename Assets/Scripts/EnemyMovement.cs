@@ -17,13 +17,13 @@ public class EnemyMovement : MonoBehaviour
     public GameObject detectionPoint;
 
 
-    //private Animator animator; 
+    private Animator animator; 
 
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
         */
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
-        //animator.SetFloat("speed", Mathf.Abs(rb.velocity.x));
+        //animator.SetFloat("speed", Mathf.Abs(rb2D.velocity.x));
 
 
     }
