@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float health;
     public float previousHealth;
     public float maxHealth;
+    public Animator animator;
 
 
     void Awake()
@@ -54,15 +55,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
+            animator.SetBool("Run", true);
 
 
-
+        }
+        else
+        {
+            animator.SetBool("Run", false);
         }
         if (Input.GetButtonDown("Jump") && grounded == true)
 
         {
             rb2D.velocity = new Vector2(0, jumpForce);
             jumpSound.Play();
+            animator.SetTrigger("Jump");
+
 
         }
 
