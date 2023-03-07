@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb2D;
     [SerializeField]
     private float direction;
+    [SerializeField]
+    private float direction2;
     public GameObject detectionPoint;
 
 
@@ -24,6 +26,9 @@ public class EnemyMovement : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+
     }
 
 
@@ -62,17 +67,20 @@ public class EnemyMovement : MonoBehaviour
         transform.localScale = scale;
     }
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    { 
+       
+        
         if (collision.gameObject.tag == "Player")
         {
             playerHealth.TakeDamage(damage);
+           
         }
     }
 
 
     private void LateUpdate()
     {
-        Debug.DrawRay(detectionPoint.transform.position, Vector2.down, Color.green);
+        Debug.DrawRay(detectionPoint.transform.position, Vector2.down * direction2, Color.green);
 
         RaycastHit2D hit = Physics2D.Raycast(detectionPoint.transform.position, Vector2.down, 10f, groundLayer);
         if (!hit)
@@ -84,8 +92,8 @@ public class EnemyMovement : MonoBehaviour
 
 
 
-        Debug.DrawRay(detectionPoint.transform.position, Vector2.right * direction, Color.blue);
-        RaycastHit2D hit2 = Physics2D.Raycast(detectionPoint.transform.position, new Vector2(direction, 0), groundLayer);
+        Debug.DrawRay(detectionPoint.transform.position, Vector2.right * direction , Color.blue);
+        RaycastHit2D hit2 = Physics2D.Raycast(detectionPoint.transform.position, new Vector2(direction, 1f), groundLayer);
         if (hit2.collider != null)
 
         {
