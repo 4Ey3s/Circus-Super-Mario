@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public float maxHealth;
     public Animator animator;
 
+    public bool hasKey;
+
+
 
     void Awake()
     {
@@ -93,11 +96,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("NextLevel"))
         {
-           GameManager.manager.currentLevel = collision.gameObject.name;
+            if (hasKey == true)
 
-            SceneManager.LoadScene(collision.gameObject.GetComponent<NextLevel>().LevelToLoad);
+               // GameManager.manager.currentLevel = GameManager.manager.currentLevel;
+            SceneManager.LoadScene("Level_2");
+        }
+        if (collision.CompareTag("Key"))
+        {
+            hasKey = true;
+            Destroy(collision.gameObject);
         }
     }
 
 
 }
+
+  
