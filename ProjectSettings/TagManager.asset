@@ -9,6 +9,7 @@ TagManager:
   - NextLevel
   - Key
   - AddHealth
+  - Credits
   layers:
   - Default
   - TransparentFX

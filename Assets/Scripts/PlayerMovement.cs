@@ -106,6 +106,13 @@ public class PlayerMovement : MonoBehaviour
             hasKey = true;
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Credits"))
+        {
+
+
+            SceneManager.LoadScene("Credits");
+        }
     }
 
 

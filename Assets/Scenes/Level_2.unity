@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &389750369
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8096,7 +8096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3616966623175078952, guid: d7fdaad4d5eaafa48a2ecf3621843ddb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.08
+      value: -39.19
       objectReference: {fileID: 0}
     - target: {fileID: 3616966623175078952, guid: d7fdaad4d5eaafa48a2ecf3621843ddb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9831,7 +9831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &656550701
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105171,27 +105171,13 @@ GameObject:
   - component: {fileID: 2038751856}
   - component: {fileID: 2038751855}
   - component: {fileID: 2038751854}
-  - component: {fileID: 2038751853}
   m_Layer: 0
   m_Name: NextLevel
-  m_TagString: NextLevel
+  m_TagString: Credits
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2038751853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038751852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4997a2be4a4cc9846a2345ac93f71658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelToLoad: Credits
 --- !u!58 &2038751854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110019,7 +110005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2052297421
 SpriteRenderer:
   m_ObjectHideFlags: 0
